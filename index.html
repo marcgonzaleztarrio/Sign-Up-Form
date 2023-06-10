@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulatio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="odinBueno.png">
+</head>
+
+<body>
+    <section class="grid">
+        <div class=" grid-content title">
+            <img src="zeusNah.gif" width="228" height="280"></img>
+            <h1>ODIN</h1>
+        </div>
+        <div class="grid-content formu">
+            <form action="send.html" onsubmit="validateForm()" >
+                <div class="center">
+                    <label for="fname">First name:</label>
+                    <input 
+                    type="text" 
+                    id="fname" 
+                    name="fname" 
+                    placeholder="name"
+                    pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
+                    title="Please enter a valid first name, example: Maria" 
+                    required 
+                    />
+                    <label for="lname">Last name:</label>
+                    <input 
+                    type="text" 
+                    id="lname" 
+                    name="lname" 
+                    required 
+                    placeholder="last-name" 
+                    />
+                </div>
+
+                <div class=" center">
+                    <label for="email">Email:</label>
+                    <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    placeholder="email@gmail.com"
+                    pattern="([a-zA-Z0-9]([^ @&%$\\\/()=?¿!.,:;]?|\d?)+[a-zA-Z0-9][\.]){1,2}"
+                    title="Please enter a valid email, example: email@hotmail.com" 
+                    />
+                    <label for="fname">Phone Number:</label>
+                    <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    placeholder="phone-number"
+                    pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
+                    title="Please enter a valid phone number, example: 689442199" 
+                    />
+                </div>
+                <div class="center">
+                    <label for="fname">Password:</label>
+                    <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="doraemon34" 
+                    required
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                    title="Please enter a valid password, example: Aqwe@!" 
+
+                    />
+                    <label for="fname">Confirm Password:</label>
+                    <input 
+                    type="password" 
+                    id="confirmPssw" 
+                    name="confirmPssw" 
+                    placeholder="doraemon34" 
+                    required
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                    title="Please enter a valid password, example: Aqwe@!" 
+                    />
+                    <p id="textPassw">Passwords do not match</p>
+                    <p id="textRequiered">Rellena los campos</p>
+                </div>
+
+                <button type="submit" id="submitBtt">Send</button>
+            </form>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
