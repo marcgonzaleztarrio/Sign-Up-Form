@@ -10,12 +10,22 @@ let submit = document.querySelector("#submitBtt"),
 
 textPassw.style.display = "none";
 
+function checkPattern() {
+  // Allow A-Z, a-z, 0-9 and underscore. Min 1 char.
+  const pattern =
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,25}$/;
+
+  console.log(pattern.test(password.value));
+}
+
 function checkFormValidity() {
+  
+
   if (
     fname.value.trim() !== "" &&
     lname.value.trim() !== "" &&
     email.value.trim() !== "" &&
-    password.value === confirmPssw.value
+    password.valid === confirmPssw.value
   ) {
     submit.style.color = "green";
   } else {
@@ -39,11 +49,13 @@ submit.addEventListener("click", (event) => {
   ) {
     console.log("Rellena los campos requeridos");
     textRequiered.style.display = "block";
+    submit.style.color = "";
   } else {
     textRequiered.style.display = "none";
     if (password.value !== confirmPssw.value) {
       console.log("Las contraseñas no coinciden");
       textPassw.style.display = "block";
+      submit.style.color = "";
     } else {
       console.log("Las contraseñas coinciden");
       console.log("First Name:", fname.value);
